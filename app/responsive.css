@@ -1,0 +1,42 @@
+/* Mobile defaults first; the layout expands at Tailwind's sm and lg breakpoints. */
+html { scroll-padding-top: 1.5rem; }
+.app-shell {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+  padding-top: max(1rem, env(safe-area-inset-top));
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+.hero-title {
+  font-size: clamp(2rem, 1.25rem + 3.5vw, 3.75rem);
+  line-height: 1.12;
+  text-wrap: balance;
+}
+h1, h2, h3, p { overflow-wrap: break-word; }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid #0f766e;
+  outline-offset: 4px;
+}
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  transform: translateY(-200%);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #115e59;
+  color: white;
+}
+.skip-link:focus { transform: translateY(0); }
+@media (min-width: 640px) {
+  .app-shell {
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+  }
+}
+@media (min-width: 1024px) {
+  .app-shell {
+    padding-left: max(2.5rem, env(safe-area-inset-left));
+    padding-right: max(2.5rem, env(safe-area-inset-right));
+  }
+}
